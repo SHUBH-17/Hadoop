@@ -1,0 +1,69 @@
+linux commands:
+
+pwd   :present working directory pwd --help for more info
+ls    : list of the files n a directory
+ls -l :
+ls -ltr :
+clear :
+ls --help  :
+mkdir test_demo : create directory test_demo
+cp trees.csv test_demo/ : copies trees.csv into test_demo
+cd test_demo/ : goes into test_demo (change dir)
+cd /config/workspace (exact path known)
+cd .. :one level previous
+cd ../.. :two level previous
+head trees.csv : starting 10 lines of files
+head -20 trees.csv : 20 lines
+tail trees.csv
+rm trees.csv : removes file
+wc --help
+wc -l mapper.py : 15 lines
+wc -w mapper.py : 79 words
+wc -m mapper.py : 522 characters
+cat mapper.py : content of mapper.py
+----------------------------------------------------------------
+
+hadoop comands:
+/ -> root directory
+hadoop fs -ls / : list files/directories in root directory
+
+hadoop fs -mkdir /input_data
+
+hadoop fs -put test_demo/trees.csv /input_data
+hadoop fs -put test_demo/trees.csv /input_data
+
+hadoop fs -copyToLocal /input_data/trees.csv ./
+
+. :current directory
+
+hadoop fs -rem -r /test : deleted entire directory and its content
+
+--------------------------------
+
+
+hadoop fs -mkdir /first_map_reduce
+hadoop fs -put raw_data.txt /first_map_reduce
+hadoop fs -ls /first_map_reduce
+
+# Command to execute map reduce code
+hadoop jar hadoop-streaming-2.4.0.jar -files mapper.py,reducer.py -mapper mapper.py -reducer reducer.py -input /test/demo.txt -output /output
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
